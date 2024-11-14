@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+</head>
+<body>
+    <h1>Добро пожаловать в магазин ювелирных изделий!</h1>
+    <ul>
+        <li><a href="/jewelry">Просмотр всех украшений</a></li>
+        <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="/jewelry/new">Добавить новое украшение</a></li>
+        <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="/jewelry/search">Поиск украшений по материалу</a></li>
+    </ul>
+    <div>
+        <a href="/logout">Выйти</a>
+    </div>
+</body>
+</html>

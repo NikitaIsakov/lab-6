@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все украшения</title>
+</head>
+<body>
+    <h1>Список украшений</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Материал</th>
+                <th>Описание</th>
+                <th>Вес</th>
+                <th>Цена</th>
+                <th sec:authorize="hasRole('ROLE_ADMIN')">Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="jewelry : ${jewelries}">
+                <td th:text="${jewelry.name}">Название</td>
+                <td th:text="${jewelry.material}">Материал</td>
+                <td th:text="${jewelry.description}">Описание</td>
+                <td th:text="${jewelry.weight}">Вес</td>
+                <td th:text="${jewelry.price}">Цена</td>
+                <td sec:authorize="hasRole('ROLE_ADMIN')">
+                    <a th:href="@{/jewelry/edit/{id}(id=${jewelry.id})}">Редактировать</a> |
+                    <a th:href="@{/jewelry/delete/{id}(id=${jewelry.id})}">Удалить</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/">Вернуться на главную страницу</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удалить украшение</title>
+</head>
+<body>
+    <h1>Удалить украшение</h1>
+    <p>Вы уверены, что хотите удалить украшение с ID <span th:text="${jewelry.id}"></span> (название: <span th:text="${jewelry.name}"></span>)?</p>
+    <form action="/jewelry/delete" method="post">
+        <input type="hidden" name="id" th:value="${jewelry.id}"/>
+        <button type="submit">Удалить</button>
+    </form>
+    <a href="/">Вернуться на главную страницу</a>
+</body>
+</html>

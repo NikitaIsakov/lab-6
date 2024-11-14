@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск украшений</title>
+</head>
+<body>
+    <h1>Поиск украшений</h1>
+
+    <form action="/jewelry/search" method="get">
+        <label for="material">Поиск по материалу:</label>
+        <input type="text" id="material" name="material">
+        <button type="submit">Искать</button>
+    </form>
+
+    <div th:if="${jewelryList.isEmpty()}">
+        <p>Ничего не найдено.</p>
+    </div>
+
+    <table th:if="${not jewelryList.isEmpty()}">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Материал</th>
+                <th>Описание</th>
+                <th>Вес</th>
+                <th>Цена</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="jewelry : ${jewelryList}">
+                <td th:text="${jewelry.name}"></td>
+                <td th:text="${jewelry.material}"></td>
+                <td th:text="${jewelry.description}"></td>
+                <td th:text="${jewelry.weight}"></td>
+                <td th:text="${jewelry.price}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

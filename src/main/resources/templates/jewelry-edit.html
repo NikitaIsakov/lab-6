@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать украшение</title>
+</head>
+<body>
+    <h1>Редактировать украшение</h1>
+    <form action="/jewelry/update" method="post">
+        <input type="hidden" name="id" th:value="${jewelry.id}"/>
+
+        <label for="name">Название:</label>
+        <input type="text" id="name" name="name" th:value="${jewelry.name}" required><br>
+
+        <label for="material">Материал:</label>
+        <input type="text" id="material" name="material" th:value="${jewelry.material}" required><br>
+
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description" th:text="${jewelry.description}"></textarea><br>
+
+        <label for="weight">Вес (г):</label>
+        <input type="number" id="weight" name="weight" th:value="${jewelry.weight}" required><br>
+
+        <label for="price">Цена (руб.):</label>
+        <input type="number" id="price" name="price" th:value="${jewelry.price}" required><br>
+
+        <button type="submit">Обновить</button>
+    </form>
+    <a href="/">Вернуться на главную страницу</a>
+</body>
+</html>

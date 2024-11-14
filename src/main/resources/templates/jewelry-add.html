@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить новое украшение</title>
+</head>
+<body>
+    <h1>Добавить новое украшение</h1>
+    <form action="/jewelry/new" method="post">
+        <label for="name">Название:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="material">Материал:</label>
+        <input type="text" id="material" name="material" required><br>
+
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description"></textarea><br>
+
+        <label for="weight">Вес (г):</label>
+        <input type="number" id="weight" name="weight" required><br>
+
+        <label for="price">Цена (руб.):</label>
+        <input type="number" id="price" name="price" required><br>
+
+        <button type="submit">Сохранить</button>
+    </form>
+    <a href="/">Вернуться на главную страницу</a>
+</body>
+</html>

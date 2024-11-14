@@ -1,0 +1,16 @@
+ru\example\RoleRepository.class
+ru\example\User.class
+ru\example\AuthController.class
+ru\example\SecurityConfig.class
+ru\example\AdminConfig.class
+ru\example\JewelryRepository.class
+ru\example\JewelryController.class
+ru\example\JewelryAppApplication.class
+ru\example\Role.class
+ru\example\AppAuthenticationSuccessHandler.class
+ru\example\JewelryService.class
+ru\example\UserRepository.class
+ru\example\ConsoleApp.class
+ru\example\Jewelry.class
+ru\example\UserService.class
+ru\example\CustomUserDetailsService.class
